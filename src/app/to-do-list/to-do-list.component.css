@@ -1,0 +1,9 @@
+.task-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.task-item p {
+  flex-grow: 1;
+}
