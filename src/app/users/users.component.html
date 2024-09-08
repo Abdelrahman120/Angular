@@ -1,0 +1,39 @@
+<div class="container">
+  <h1>Users</h1>
+  <hr />
+  <div class="row height d-flex justify-content-center align-items-center mt-3">
+    <div class="col-md-8">
+      <div class="search">
+        <i class="fa fa-search"></i>
+        <input type="text" class="form-control" [(ngModel)]="searchQuery"
+          placeholder="Search with Email">
+        <button class="btn btn-primary" (click)="search()">Search</button>
+      </div>
+    </div>
+  </div>
+  <div class="row row-cols-1 row-cols-md-2 g-4 mt-3">
+    @for (user of users; track user.id) {
+    <div class="col-md-4">
+      <div class="card text-center">
+        <img [src]="user.image" class="card-img-top rounded mx-auto d-block"
+          alt="..."
+          style="height: 50px; width: 50px" />
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          @if (user.role == 'admin') {
+          <span class="badge bg-danger">{{ user.role }}</span>
+          }@else if (user.role == 'moderator'){
+          <span class="badge bg-warning">{{ user.role }}</span>
+          }@else {
+          <span class="badge bg-success">{{ user.role }}</span>
+          }
+          <p class="card-text">{{ user.name }}</p>
+          <p class="card-text">{{ user.email }}</p>
+          <p class="card-text">{{ user.phone }}</p>
+          <p class="card-text">{{ user.birthDate | date :'fullDate' }}</p>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+</div>
