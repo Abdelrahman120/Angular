@@ -1,0 +1,22 @@
+<h2>Users</h2>
+<hr />
+<!-- string interpolation -->
+<h3>User 1</h3>
+<p>Username: {{ username }}</p>
+<p>Age : {{ age }}</p>
+<h3>User 2</h3>
+<p>Username : {{ user.name }}</p>
+<p>Age : {{ user.age }}</p>
+<p>Title : {{ user.title }}</p>
+<!-- Property binding -->
+<img [src]="profile_pic" />
+<input [value]="username" />
+<button [disabled]="!user.is_admin">Click me</button>
+
+<br />
+<!-- Event Binding -->
+<button (click)="handleAlert('Ahmed')">Alert User 1</button>
+<button (click)="handleAlert('Omar')">Alert User 2</button>
+<button (click)="handleAlert('Aya')">Alert User 3</button>
+
+
