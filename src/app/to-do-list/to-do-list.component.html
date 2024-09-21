@@ -3,7 +3,7 @@
   <h3 class="text-start text-black">ToDoList</h3>
   @for(task of tasks; track $index){
   <div class="task-item">
-    <p>{{ task.text }}</p>
+    <p class="fw-bold fs-5">{{ task.text }}</p>
     <button class="btn" [ngClass]="{'btn-primary': task.completed, 'btn-success': !task.completed}"
       (click)="toggleTask($index)">
       {{ task.completed ? 'Undo' : 'Completed' }}
